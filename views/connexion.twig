@@ -1,0 +1,61 @@
+{% extends "./auth.twig" %}
+
+{% block Forms %}
+	{% if  errors.not_found %}
+		<p class="error">{{errors.not_found}}</p>
+	{% endif %}
+
+
+	<div class="creer">
+		<p class="creer_compte">
+			Sélectionner votre profil
+
+
+		</p>
+		<div>
+			<a href="connexion">Client</a>
+			<a href="connexion">Livreur</a>
+		</div>
+	</div>
+
+
+	<label for="email">email :</label>
+
+	<input
+
+	class="text email" type="text" name="email" placeholder="email" value={{email}}>
+	<!-- emplacement message d'erreur email -->
+	{% if errors.email %}
+		<p class="error">{{errors.email}}</p>
+	{% endif %}
+
+	<label for="mot_de_passe">mot de passe :</label>
+
+
+	<input
+	class="text password" type="password" name="mot_de_passe" placeholder="mot de passe" value={{mot_de_passe}}>
+
+
+	<!-- emplacement message d'erreur mot de passe -->
+	{% if errors.mot_de_passe %}
+
+		<p class="error">{{errors.mot_de_passe}}</p>
+
+	{% endif %}
+
+	<input type="submit" value="Se connecter">
+
+
+{% endblock %}
+
+{% block mdpSeconnecter %}
+
+	{# <p>Mots de passe oublier</p> #}
+
+	<a href="#">
+		Mots de passe oublier</a>
+	<a href="./inscription">
+		créer un compte client</a>
+
+
+{% endblock %}

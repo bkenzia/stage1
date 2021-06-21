@@ -1,0 +1,73 @@
+{% extends "/admin/admin.twig" %}
+{% block content %}
+
+	<h1>la liste des livreurs</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>livreur_id</th>
+				<th>nom</th>
+
+				<th>prénom</th>
+
+				<th>identifiant</th>
+				<th>
+					mot de passe
+				</th>
+
+
+				<th>telephone</th>
+
+
+			</tr>
+		</thead>
+	</th>
+
+</thead>
+<tbody>
+	{% for liv in livreur %}
+		<tr>
+			<td>{{liv.client_id}}</td>
+
+			<td>{{liv.nom}}</td>
+
+			<td>{{liv.prénom}}</td>
+
+
+			<td>{{liv.email}}</td>
+			<td>{{liv.mot_de_passe}}</td>
+
+			<td>{{liv.telephone}}</td>
+
+
+			<td>
+				<div>
+
+					<form action="livreur/suprimer{{liv.client_id}}" method="POST">
+
+
+						<button>suprimer</button>
+
+					</form>
+				</div>
+
+
+			</td>
+			{# <td>
+							<div>
+			
+								<form action="/" method="POST">
+			
+			
+									<button>ajouter planning</button>
+			
+								</form>
+							</div>
+						</td> #}
+
+		</tr>
+	{% endfor %}
+
+</tbody></table><div class="add-container">
+<a class="btn" href="/admin/livreur/add_livreur">Ajouter un livreur</a></div>{% endblock %}

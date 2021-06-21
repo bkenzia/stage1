@@ -1,0 +1,122 @@
+{% extends "./auth.twig" %}
+
+{% block Forms %}
+	<p class="titre">creation d'un compte client</p>
+	{% if  errors.not_found %}
+		<p class="error">{{errors.not_found}}</p>
+	{% endif %}
+
+	<label for="Nom">Nom :</label>
+	<input class="text" type="text" name="Nom" placeholder="Nom" value={{fields.Nom}}>
+
+
+	{% if errors.Nom %}
+		<p class="error">{{errors.Nom}}</p>
+	{% endif %}
+
+	<label for="Prénom">Prénom :</label>
+	<input class="text prenom" type="text" name="Prénom" placeholder="Prénom" value={{fields.Prénom}}>
+
+	{% if errors.Prénom %}
+		<p class="error">{{errors.Prénom}}</p>
+	{% endif %}
+	<label for="Nom-de-société">Nom de société :</label>
+	<input class="text prenom" type="text" name="Nom_de_société" placeholder="Nom de société" value={{fields.Nom_de_société}}>
+
+
+	{% if errors.Nom_de_société %}
+
+		<p class="error">{{errors.Nom_de_société}}</p>
+
+	{% endif %}
+
+	<label for="Nom-de-société">age :</label>
+	<input class="text prenom" type="text" name="age" placeholder="age" value={{fields.age}}>
+
+	{% if errors.age %}
+
+		<p class="error">{{errors.age}}</p>
+
+	{% endif %}
+
+
+	<label for="téléphone">téléphone :</label>
+	<input class="text prenom" type="tel" name="téléphone" placeholder="téléphone" value={{fields.téléphone}}>
+
+	{% if errors.téléphone %}
+
+		<p class="error">{{errors.téléphone}}</p>
+
+	{% endif %}
+
+	<label for="email">email :</label>
+	<input class="text email" type="text" name="email" placeholder="Email" value={{fields.email}}>
+
+	{% if errors.email %}
+		<p class="error">{{errors.email}}</p>
+	{% endif %}
+
+	<label for="confirm_email">Confirmer votre Email :</label>
+	<input class="text w3lpass" type="text" name="confirm_email" placeholder="Confirmer votre Email" value={{fields.confirm_email}}>
+
+
+	{% if errors.confirm_email %}
+
+		<p class="error">{{errors.confirm_email}}</p>
+
+	{% endif %}
+	{% if errors.email_match %}
+
+
+		<p class="error">{{errors.email_match}}</p>
+
+
+	{% endif %}
+	<div class="password__container">
+
+		<span class="eye--open"></span>
+
+		<label for="mot_de_passe">Mots de passe :</label>
+		<input class="text mot_de_passe " type="password" name="mot_de_passe" placeholder="Mots de passe" value={{fields.mot_de_passe}}>
+	</div>
+
+
+	{% if errors.mot_de_passe %}
+
+
+		<p class="error">{{errors.mot_de_passe}}</p>
+
+
+	{% endif %}
+
+	<label for="confirm_password">Confirmer votre  Mots de passe :</label>
+	<input class="text w3lpass" type="password" name="confirm_password" placeholder="Confirmer votre  Mots de passe" value={{fields.confirm_password}}>
+
+
+	{% if errors.confirm_password %}
+
+
+		<p class="error">{{errors.confirm_password}}</p>
+
+
+	{% endif %}
+	{% if errors.password_match %}
+
+
+		<p class="error">{{errors.password_match}}</p>
+
+
+	{% endif %}
+
+
+	<div class="wthree-text">
+		<label class="anim">
+			<input type="checkbox" class="checkbox" name="koko" required="">
+			<span>Accepter les règles générales du site</span>
+
+		</label>
+		<div class="clear"></div>
+	</div>
+
+	<input type="submit" value="Créer le compte">
+{% endblock %}

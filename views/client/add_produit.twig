@@ -1,0 +1,62 @@
+{% extends "client.twig" %}
+
+
+{% block head %}
+	<script src="/public/assets/js/admin/add-product.js" defer></script>
+{% endblock %}
+
+{% block content %}
+	<form class="add-form" method='POST' enctype="multipart/form-data">
+		<div>
+			<label for="name">Nom</label>
+			<input value="{{product.name | raw}}" type="text" name="nom" id="name">
+		</div>
+		<div>
+			<label for="price">fragilité</label>
+
+			<input value="{{product.price}}" type="text" id="price" name="fragilité" placeholder="  OUI  /  NON">
+
+
+		</div>
+		<div>
+			<label for="quantity">conserver dans des basses températures</label>
+
+			<input value="{{product.quantity}}" type="text" name="températeur" id="quantity" placeholder="  OUI  /  NON">
+
+		</div>
+		<div>
+			<label for="weight">volum</label>
+
+			<input value="{{product.weight}}" type="number" name="volum" id="weight" min="0">
+
+		</div>
+		<div
+			class="form__row--image-description">
+			{# <div class="img__container">
+																																		<div class="img__field">
+																																			<label for="file">un justificatif</label>
+																																			<input type="file" name="file" id="file">
+																																		</div>
+																																		<img id="product-image" src="{{product.image_url}}" alt="">
+																																	</div> #}
+			<div>
+				<label for="description">Description du produit</label>
+				<textarea name="description" id="description">{{product.description | raw}}</textarea>
+
+			</div>
+		</div>
+
+		<div>
+			{% for category in categories %}
+				<div>
+					<input {# checked={{category.category_id == product.category_id}} #} value={{category.category_id}} id="{{category.name}}" type="checkbox" name="categories[]"/>
+					<label for="{{category.name}}">{{category.name | raw}}</label>
+				</div>
+			{% endfor %}
+		</div>
+
+		<div>
+			<button class="btn" type="submit">Ajouter</button>
+		</div>
+	</form>
+{% endblock %}

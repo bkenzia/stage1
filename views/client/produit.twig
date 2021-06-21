@@ -1,0 +1,70 @@
+{% extends "client.twig" %}
+{% block content %}
+
+	<h1>Produits</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>produit_id</th>
+				<th>nom</th>
+
+				<th>description</th>
+
+				<th>fragilité</th>
+				<th>
+					conserver dans des basses températures
+				</th>
+
+				<th>volum</th>
+
+
+			</tr>
+		</thead>
+	</th>
+
+</thead>
+<tbody>
+	{% for product in produit %}
+		<tr>
+			<td>{{product.article_id}}</td>
+
+			<td>{{product.nom}}</td>
+
+			<td>{{product.description}}</td>
+			{% if product.est_fragile %}
+				<td>oui</td>
+			{% else %}
+
+				<td>non</td>
+
+			{% endif %}
+			{% if product.est_temperatures %}
+
+				<td>oui</td>
+			{% else %}
+
+				<td>non</td>
+
+			{% endif %}
+
+
+			<td>{{product.volum}}</td>
+
+
+			<td>
+				<div>
+
+					<form action="/client/produit/suprimer{{product.article_id}}" method="POST">
+
+
+						<button>suprimer</button>
+
+					</form>
+				</div>
+			</td>
+		</tr>
+	{% endfor %}
+
+</tbody></table><div class="add-container">
+<a class="btn" href="/client/produit/add_produit">Ajouter un produit</a></div>{% endblock %}

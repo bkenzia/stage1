@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>cleck&collect |
+			{{ page_title }}</title>
+		<link rel="stylesheet" href="/public/assets/scss/style.css"/>
+		<link rel="stylesheet" href="/public/admin/admin.css"/> {% block head %}{% endblock %}
+		</head>
+		<body>
+			<div class="admin">
+				<header class="admin--header">
+					<div class="img__container">
+						<a href="/">
+							<img src="../public/images/logo.png" alt=""/>
+						</a>
+					</div>
+
+					{# <form class="search__form">
+																<input type="search" name="q" id="search"/>
+																<label for="search">
+																	<button type="submit">rechercher</button>
+																</label>
+															</form> #}
+					<div class="admin--welcome">
+						<p>
+							<span>
+								Bienvenue
+							</span>
+							<span>
+								{{user.first_name}}!
+							</span>
+						</p>
+						<a href="/logout">se déconnecter</a>
+					</div>
+				</header>
+				<nav class="admin--sidebar">
+
+					<ul>
+						<li>
+							<a href="/client/prestation" class="{{ 'produits' in active_page ? 'active' : '' }}">Prestation</a>
+						</li>
+
+						<li>
+							<a href="/client/produit" class="{{ 'categories' in active_page ? 'active' : '' }}">Produits</a>
+						</li>
+						{# <li><a href="/admin/utilisateurs"class="{{ 'utilisateurs' in active_page ? 'active' : '' }}">Panier</a></li>
+												<li><a href="/admin/commandes"class="{{ 'commandes' in active_page ? 'active' : '' }}">Paiment</a></li> #}
+					</ul>
+				</nav>
+				<main>
+					{% block content %}{% endblock %}
+				</main>
+			</div>
+		</body>
+	</html>

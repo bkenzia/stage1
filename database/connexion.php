@@ -8,8 +8,10 @@ try {
       PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
       PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     ]);
+   
 } catch (PDOException $e) {
-  // $twig = $GLOBALS['twig'];
-  // echo $twig->render('500.twig', ['page_title' => 'Erreur serveur']);
+  $twig = $GLOBALS['twig'];
+  echo $twig->render('500.twig', ['page_title' => 'Erreur serveur']);
   die();
+  
 }

@@ -1,0 +1,17 @@
+@keyframes notif-slide-from-right {
+  from {
+    right: -10vw;
+  }
+  to {
+    right: 2rem;
+  }
+}
+
+@keyframes notif-slide-to-right {
+  from {
+    right: 2rem;
+  }
+  to {
+    right: -50vw;
+  }
+}

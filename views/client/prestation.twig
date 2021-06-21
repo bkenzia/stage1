@@ -1,0 +1,54 @@
+{% extends "client.twig" %}
+{% block content %}
+
+	<h1>Prestation</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Prestation_id</th>
+				<th>Adress de la collect</th>
+				<th>Adresse de livraison</th>
+				<th>Nombre de collect
+				</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			{% for prest in prestation %}
+				<tr>
+					<td>{{prest.prestation_id}}</td>
+					{# <td>
+																																																																																																										<div class="product--name">
+																																																																																																											<img src="{{product.image_url}}" alt="">
+																																																																																																											<span>
+																																																																																																												{{product.name | raw}}
+																																																																																																											</span>
+																																																																																																										</div>
+																																																																																																									</td> #}
+					<td>{{prest.address_collect}}</td>
+
+					<td>{{prest.address_livraison}}</td>
+					<td>{{prest.nombre_collect}}</td>
+
+
+					{# <td>{{product.weight}}</td> #}
+					<td>
+						<div>
+
+							<form action="/client/prestation/suprimer{{prest.prestation_id}}" method="POST">
+
+								<button>suprimer</button>
+
+							</form>
+						</div>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<div class="add-container">
+		<a class="btn" href="/client/prestation/add_prestation">Ajouter une prestation</a>
+	</div>
+
+{% endblock %}

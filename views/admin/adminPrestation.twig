@@ -1,0 +1,94 @@
+{% extends "/admin/admin.twig" %}
+
+{% block content %}
+	<h1>Prestation</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Prestation_id</th>
+				<th>Adress de la collect</th>
+				<th>Adresse de livraison</th>
+				<th>Nombre de collect
+				</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			{% for prest in prestation %}
+				<tr>
+					<td>{{prest.prestation_id}}</td>
+					{# <td>
+																																																																																																																																																																<div class="product--name">
+																																																																																																																																																																	<img src="{{product.image_url}}" alt="">
+																																																																																																																																																																	<span>
+																																																																																																																																																																		{{product.name | raw}}
+																																																																																																																																																																	</span>
+																																																																																																																																																																</div>
+																																																																																																																																																															</td> #}
+					<td>{{prest.address_collect}}</td>
+
+					<td>{{prest.address_livraison}}</td>
+					<td>{{prest.nombre_collect}}</td>
+
+
+					{# <td>{{product.weight}}</td> #}
+
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<br><br><br><br><br>
+	<h1>Produits</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>produit_id</th>
+				<th>nom</th>
+
+				<th>description</th>
+
+				<th>fragilité</th>
+				<th>
+					conserver dans des basses températures
+				</th>
+
+				<th>volum</th>
+
+
+			</tr>
+		</thead>
+	</th>
+</thead>
+<tbody>
+	{% for product in produit %}
+		<tr>
+			<td>{{product.article_id}}</td>
+
+			<td>{{product.nom}}</td>
+
+			<td>{{product.description}}</td>
+			{% if product.est_fragile %}
+				<td>oui</td>
+			{% else %}
+
+				<td>non</td>
+
+			{% endif %}
+			{% if product.est_temperatures %}
+
+				<td>oui</td>
+			{% else %}
+
+				<td>non</td>
+
+			{% endif %}
+
+
+			<td>{{product.volum}}</td>
+
+
+		</tr>
+	{% endfor %}
+</tbody></table>{% endblock %}

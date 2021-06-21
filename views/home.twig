@@ -1,0 +1,56 @@
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Click&Collect  |
+
+		{{ page_title ?? 'Accueil' }}</title>
+	<link rel="stylesheet" href="/public/assets/scss/style.css"> {% block head %}{% endblock %}
+	</head>
+	<body>
+		<header>
+			<div>
+				<a href="/">
+					<img src="/public/images/logo.png" alt="">
+				</a>
+			</div>
+			<nav>
+				<ul>
+					<li>
+						<a class="{{'home' in active_page ? 'active' : ''}}" href="/">Accueil</a>
+					</li>
+
+
+					{# <li>
+																<a class="{{'produits' in active_page ? 'active' : ''}}" href="/produits">Produits</a>
+															</li> #}
+					{% if user %}
+						{# <li>
+																																					<a class="{{'produits' in active_page ? 'active' : ''}}" href="/client/prestation">Prestation</a>
+																																				</li> #}
+
+						{# <li>
+																															<a class="{{'panier' in active_page ? 'active' : ''}}" href="/panier">Panier</a>
+																														</li> #}
+							<li>
+								<a class="{{'mon-compte' in active_page ? 'active' : ''}}" href="{{ user.est_admin ? '/admin' : '/client' }}"> Mon compte</a>
+						</li>
+						<li>
+							<a href="/logout">Se déconnecter</a>
+						</li>
+					{% else %}
+						<li>
+							<a href="/connexion">Se connecter</a>
+						</li>
+					{% endif %}
+
+				</ul>
+			</nav>
+		</header>
+		<main>
+			{% block content %}{% endblock %}
+		</main>
+		<footer>&copy; Click&Collect  - 2021</footer>
+
+	</body>
+</html>

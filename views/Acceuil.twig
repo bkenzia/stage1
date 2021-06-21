@@ -1,0 +1,105 @@
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Click&Collect  |
+
+		{{ page_title ?? 'Accueil' }}</title>
+	<link
+	rel="stylesheet" href="/public/assets/scss/style.css">
+	{# <link rel="stylesheet" href="/public/carossel/carossel.css"> #}
+	<script src="/public/js/carossel.js" defer></script>
+
+	{% block head %}{% endblock %}
+</head>
+<body>
+	<header>
+		<div>
+			<a href="/">
+				<img src="/public/images/logo.png" alt="">
+			</a>
+		</div>
+		<nav>
+			<ul>
+				<li>
+					<a class="{{'home' in active_page ? 'active' : ''}}" href="/">Accueil</a>
+				</li>
+
+
+				{# <li>
+																																																																																																																																																	<a class="{{'produits' in active_page ? 'active' : ''}}" href="/produits">Produits</a>
+																																																																																																																																																</li> #}
+				{% if user %}
+					{# <li>
+																																																																																																																																																																																																						<a class="{{'produits' in active_page ? 'active' : ''}}" href="/client/prestation">Prestation</a>
+																																																																																																																																																																																																					</li> #}
+
+					{# <li>
+																																																																																																																																																																																																<a class="{{'panier' in active_page ? 'active' : ''}}" href="/panier">Panier</a>
+																																																																																																																																																																																															</li> #}
+						<li>
+							<a class="{{'mon-compte' in active_page ? 'active' : ''}}" href="{{ user.est_admin ? '/admin' : '/client' }}"> Mon compte</a>
+					</li>
+					<li>
+						<a href="/logout">Se déconnecter</a>
+					</li>
+				{% else %}
+					<li>
+						<a href="/connexion">Se connecter</a>
+					</li>
+				{% endif %}
+
+			</ul>
+		</nav>
+	</header>
+	<main>
+		{% block content %}
+			<section class="welcome">
+				<div>
+					<h1>Lorem ipsum dolor sit amet.</h1>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste natus sapiente, adipisci, magni explicabo sequi non, distinctio recusandae mollitia repudiandae est aliquam ratione laboriosam? Rerum harum dignissimos et vel voluptates?</p>
+					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, quo dolor, repudiandae reiciendis, odio ex incidunt delectus nobis maiores veniam cumque earum repellat quod laborum facilis! Necessitatibus nulla nihil in, possimus aut eius velit tenetur ab sequi quam! Consequatur soluta quod modi! Rem, expedita modi nemo aperiam commodi distinctio quaerat.</p>
+					<p>
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, officia fugiat praesentium sequi corrupti est molestias iure magnam iusto vel nostrum illum debitis, itaque eos adipisci aliquid eaque deserunt minima!
+																																																																																																																																	Iure veniam nobis ducimus non maxime minima repellendus excepturi? Repellendus, dolor eum explicabo distinctio consequatur incidunt facilis nam exercitationem recusandae libero alias autem sed deserunt maxime, magnam animi molestias quos.
+					</p>
+				</div>
+				<div
+					class="carousel">
+					{# {% for product in products %} #}
+					<div>
+						<img src="/public/images/livraison/image1.png" alt="">
+
+						<img src="/public/images/livraison/image2.png" alt="">
+						<img src="/public/images/livraison/image3.png" alt="">
+						<img src="/public/images/livraison/image4.png" alt="">
+						<img src="/public/images/livraison/image5.png" alt="">
+
+
+					</div>
+
+					{# {% endfor %} #}
+					<div class="arrows">
+						<div class="arrow--left">&lsaquo;</div>
+						<div class="arrow--right">&rsaquo;</div>
+					</div>
+					<div class="controls">
+						{% for product in products %}
+							<div class="controls__indicator"></div>
+						{% endfor %}
+					</div>
+				</div>
+			</section>
+			<section class="section-2">
+				<h2>Lorem ipsum dolor sit.</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at ad modi, nisi amet error cumque voluptate soluta tempora! Nulla accusamus eveniet cum similique rem laudantium, eos nostrum temporibus alias impedit laboriosam ab reiciendis modi fuga ex id autem, possimus unde at magni ut quaerat amet a praesentium. Quia aperiam inventore corrupti accusamus quod, exercitationem adipisci ducimus voluptatibus distinctio rerum dolorem facere magni eligendi expedita delectus repellat quos molestiae soluta laboriosam est hic repellendus? Earum eius numquam dolore unde aliquam rerum odio corporis. Molestiae maxime molestias ducimus maiores. Magni velit nesciunt, ratione odit error dolores doloremque vel cumque facere dolore! Nulla, delectus, magni, maiores doloribus et at odio quos fuga iure placeat distinctio culpa accusantium qui labore consequatur facere velit sapiente obcaecati. Rerum ipsum sunt ducimus fugit necessitatibus dolore ab, voluptatibus vitae distinctio voluptatem. Corporis necessitatibus explicabo exercitationem nulla. Dolore, eveniet voluptatem temporibus dolores quam harum magni eos quibusdam error.</p>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores atque, est sequi rem aliquam temporibus aperiam commodi provident nobis laborum molestiae debitis at et accusamus, deserunt impedit quos id unde! Laboriosam sit distinctio facilis aliquid iure modi reiciendis atque tenetur sapiente similique pariatur ipsa exercitationem ratione, fugit quis quos rerum rem magnam quod a eaque optio porro adipisci molestias! Harum esse nam, ducimus nisi vel iste nihil consequuntur rerum, saepe aliquam ullam ea vitae voluptate! Voluptate in, eos veritatis officia voluptas facere quod earum repellendus deserunt illum soluta debitis quasi! Dolores deserunt quod eaque nisi laboriosam quos quasi consequuntur blanditiis repellat perspiciatis, dolor debitis? Molestiae quis error neque odit minus tempora ut enim beatae possimus rem libero fugit nemo consequatur earum nesciunt, laborum quisquam repellat saepe non unde alias. Vero, exercitationem obcaecati vitae neque ipsa quod deleniti blanditiis minima quam quo impedit earum, laudantium facere veritatis, eius optio dolores error assumenda dolorum totam unde eveniet! Repellendus quasi est voluptas? Numquam distinctio commodi molestiae incidunt quam accusantium harum eum voluptatem nulla!</p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae adipisci repudiandae atque quidem possimus laborum magni accusantium consequatur. Tempore beatae, necessitatibus minus inventore voluptate ullam nobis numquam asperiores velit quidem impedit mollitia fugit, dolor repellendus harum exercitationem. Sint, eius quasi. Amet eos perferendis rem dicta dignissimos ratione nemo autem? Autem corporis odio commodi ut quis, dicta consequuntur similique fuga delectus!</p>
+			</section>
+
+
+		{% endblock %}
+	</main>
+	<footer>&copy; Click&Collect  - 2021</footer>
+
+</body></html>

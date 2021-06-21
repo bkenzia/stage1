@@ -1,0 +1,45 @@
+{% extends "/admin/admin.twig" %}
+
+
+{% block head %}
+	<script src="/public/assets/js/admin/add-product.js" defer></script>
+{% endblock %}
+
+{% block content %}
+	<form class="add-form" method='POST' enctype="multipart/form-data">
+		<div>
+			<label for="name">Nom de livreur</label>
+			<input value="{{product.name | raw}}" type="text" name="nom" id="name">
+		</div>
+		<div>
+			<label for="price">Prénom de livruer</label>
+			<input value="{{product.price}}" type="text" id="price" name="prenom">
+		</div>
+		<div>
+			<label for="quantity">Identifiant pour seconnecter</label>
+			<input value="{{product.quantity}}" type="email" name="livreu_id" min="0" id="quantity">
+		</div>
+		<div>
+			<label for="name">Mot de passe pour livreur</label>
+			<input value="{{product.name | raw}}" type="text" name="mot_de_passe" id="name">
+		</div>
+		{# <div>
+					<label for="name">C'est un liveur    --oui
+					</label>
+					<input value="{{product.name | raw}}" type="text" name="livreur" id="name" placeholder="oui">
+		
+				</div> #}
+		<div>
+			<label for="name">L'age de livreur</label>
+			<input value="{{product.name | raw}}" type="number" name="age" id="name">
+		</div>
+		<div>
+			<label for="name">Numero de téléphone</label>
+			<input value="{{product.name | raw}}" type="tel" name="telephone" id="name">
+		</div>
+
+
+		<button class="btn" type="submit">Ajouter</button>
+
+	</form>
+{% endblock %}
